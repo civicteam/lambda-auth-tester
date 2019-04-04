@@ -1,0 +1,36 @@
+service: lambda-auth-tester
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  Tags:
+    GROUP: lambda-auth
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - apigateway:GET
+      Resource: "*"
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+          authorizer:
+            name: customAuthorizer
+#            resultTtlInSeconds: 3600 # this is the maximum caching time
+
+  postExample:
+    handler: handler.postExample
+    events:
+      - http:
+          path: example
+          method: post
+          authorizer:
+            name: customAuthorizer
+  #            resultTtlInSeconds: 3600 # this is the maximum caching time
+  customAuthorizer:
+    handler: handler.auth

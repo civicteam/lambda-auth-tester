@@ -1,0 +1,15 @@
+{
+  "name": "lambda-auth-tester",
+  "version": "1.0.0",
+  "description": "A sandbox project to try out lambda authorisation strategies",
+  "main": "index.js",
+  "author": "Daniel Kelleher",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.435.0",
+    "serverless": "^1.40.0"
+  },
+  "scripts": {
+    "deploy": "serverless deploy"
+  }
+}
