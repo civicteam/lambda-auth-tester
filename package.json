@@ -6,7 +6,7 @@
   "author": "Daniel Kelleher",
   "license": "MIT",
   "devDependencies": {
-    "aws-sdk": "^2.435.0",
+    "aws-sdk": "^2.814.0",
     "serverless": "^1.40.0"
   },
   "scripts": {
